@@ -1,5 +1,7 @@
 package com.shohei.rotateprogresslibrary;
 
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -19,7 +21,7 @@ public class RotateProgressBar extends View {
     private static final int STROKE_WIDTH = 10;
 
     private Paint progressPaint;
-    private ValueAnimator animator;
+    private ObjectAnimator objectAnimator;
 
     public RotateProgressBar(Context context) {
         this(context, null);
@@ -39,19 +41,22 @@ public class RotateProgressBar extends View {
         progressPaint.setColor(Color.BLUE);
         progressPaint.setStrokeCap(Paint.Cap.ROUND);
 
-        animator = ValueAnimator.ofInt(0, 360).setDuration(2000);
-        animator.setInterpolator(new DecelerateInterpolator());
-        animator.setRepeatMode(ValueAnimator.RESTART);
-        animator.setRepeatCount(ValueAnimator.INFINITE);
-        animator.addUpdateListener(valueAnimator -> invalidate());
-        animator.start();
+        PropertyValuesHolder rotationValuesHolder = PropertyValuesHolder.ofInt("", 0, 360);
+        PropertyValuesHolder fadeValuesHolder = PropertyValuesHolder.ofFloat("alpha", 1f, 0f);
+        objectAnimator = ObjectAnimator.ofPropertyValuesHolder(this, rotationValuesHolder, fadeValuesHolder);
+        objectAnimator.setDuration(2000);
+        objectAnimator.setInterpolator(new DecelerateInterpolator());
+        objectAnimator.setRepeatMode(ValueAnimator.RESTART);
+        objectAnimator.setRepeatCount(ValueAnimator.INFINITE);
+        objectAnimator.addUpdateListener(valueAnimator -> invalidate());
+        objectAnimator.start();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        int progress = (Integer) animator.getAnimatedValue();
+        int progress = (Integer) objectAnimator.getAnimatedValue();
         Rect rect = new Rect();
         getDrawingRect(rect);
         RectF rectF = new RectF(rect.left + STROKE_WIDTH, rect.top + STROKE_WIDTH, rect.right - STROKE_WIDTH, rect.bottom - STROKE_WIDTH);
