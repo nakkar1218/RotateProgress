@@ -1,4 +1,4 @@
-package com.shohei.rotateprogresslibrary;
+package com.shohei.rotateprogress;
 
 import org.junit.Test;
 

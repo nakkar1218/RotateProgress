@@ -1,1 +1,1 @@
-include ':app', ':rotateprogresslibrary'
+include ':app', ':rotateprogress'

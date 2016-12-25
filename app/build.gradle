@@ -28,7 +28,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
 
-    compile project(':rotateprogresslibrary')
+    compile project(':rotateprogress')
 
     // ButterKnife
     compile 'com.jakewharton:butterknife:8.4.0'

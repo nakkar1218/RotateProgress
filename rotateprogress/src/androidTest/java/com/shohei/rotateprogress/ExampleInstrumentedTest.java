@@ -1,4 +1,4 @@
-package com.shohei.rotateprogresslibrary;
+package com.shohei.rotateprogress;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
