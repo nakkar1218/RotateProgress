@@ -57,6 +57,7 @@ public class RotateProgressBar extends View {
         objectAnimator.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animator) {
+                nextColor();
             }
 
             @Override
