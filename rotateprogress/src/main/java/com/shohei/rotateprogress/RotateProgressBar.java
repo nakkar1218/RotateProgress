@@ -6,9 +6,12 @@ import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.support.annotation.ColorRes;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
@@ -102,8 +105,31 @@ public class RotateProgressBar extends View {
      * @param colors 色
      */
     public void setColors(int... colors) {
-        //TODO カラーコードとColorResを分岐でき出来るようにする
         this.colors = colors;
+    }
+
+    /**
+     * プログレスバーで使う色をカラーコードから設定
+     *
+     * @param colors カラーコード
+     */
+    public void setColors(String... colors) {
+        this.colors = new int[colors.length];
+        for (int i = 0; i < colors.length; i++) {
+            this.colors[i] = Color.parseColor(colors[i]);
+        }
+    }
+
+    /**
+     * プログレスバーで使う色をxmlから設定
+     *
+     * @param colorId colors.xmlのID
+     */
+    public void setColorsResource(@ColorRes int... colorId) {
+        colors = new int[colorId.length];
+        for (int i = 0; i < colors.length; i++) {
+            colors[i] = ContextCompat.getColor(getContext(), colorId[i]);
+        }
     }
 
     /**

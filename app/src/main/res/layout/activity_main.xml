@@ -12,6 +12,7 @@
 
     <com.shohei.rotateprogress.RotateProgressBar
         android:id="@+id/rotate_progress_bar"
-        android:layout_width="50dp"
-        android:layout_height="50dp" />
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"/>
 </RelativeLayout>
