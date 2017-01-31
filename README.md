@@ -1,5 +1,6 @@
 # RotateProgressLibrary
 [![Download](https://api.bintray.com/packages/nakkar1218/maven/rotateprogress/images/download.svg)](https:bintray.com/nakkar1218/maven/rotateprogress/_latestVersion)
+[![Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/nakkar1218/RotateProgress/blob/master/LICENSE.md)
 
 An Android Animation library which easily add rotate progress bar.
 
