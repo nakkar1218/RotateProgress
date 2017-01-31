@@ -1,16 +1,18 @@
 # RotateProgressLibrary
+[![Download](https://api.bintray.com/packages/nakkar1218/maven/rotateprogress/images/download.svg)](https:bintray.com/nakkar1218/maven/rotateprogress/_latestVersion)
+
 An Android Animation library which easily add rotate progress bar.
 
 ## How to use
 ### Integration
 ```build.gradle
 dependencies {
-    // Coming soon
+    compile 'com.shohei.rotateprogress:rotateprogress:0.1.1'
 }
 ```
 ### Usage
 ```.java
-RotateProgressBar rotateProgressBar = (RotateProgressBar) findViewById(R.id.rotateProgressBar);
+RotateProgressBar rotateProgressBar = (RotateProgressBar) findViewById(R.id.rotate_progress_bar);
 
 rotateProgressBar.start();
 ```
@@ -31,7 +33,7 @@ rotateProgressBuilder.setColorsResource(R.color.colorPrimary, R.color.colorAccen
 
 ## License
 ```
-Copyright 2016 sho1218-ruri
+Copyright 2016 nakkar1218
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
